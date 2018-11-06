@@ -83,7 +83,7 @@ echo ">>> config"
 case "$MARCH" in
 arm)
     CONFIG_CROSS_COMPILER_PREFIX="$ANDROID_NDK_ROOT/gcc/linux-$HOST_ARCH/arm/arm-linux-androideabi-$GCC_VERSION/bin/arm-linux-androideabi-"
-	CONFIG_SYSROOT="$ANDROID_NDK_ROOT/ndk/current/platforms/android-$ANDROID_NATIVE_API_LEVEL/arch-$MARCH"
+    CONFIG_SYSROOT="$ANDROID_NDK_ROOT/ndk/current/platforms/android-$ANDROID_NATIVE_API_LEVEL/arch-$MARCH"
     CONFIG_EXTRA_CFLAGS="-DANDROID -D__ANDROID__ -DSK_RELEASE -nostdlib -march=armv5te -msoft-float -mfloat-abi=softfp -mthumb -mthumb-interwork -fpic -fno-short-enums -fgcse-after-reload -frename-registers $CFLAGS"
     CONFIG_EXTRA_LDFLAGS="-Xlinker -z -Xlinker muldefs -nostdlib -Bdynamic -Xlinker -dynamic-linker -Xlinker /system/bin/linker -Xlinker -z -Xlinker nocopyreloc -Xlinker --no-undefined \${SYSROOT}/usr/lib/crtbegin_dynamic.o \${SYSROOT}/usr/lib/crtend_android.o -fuse-ld=bfd $LDFLAGS"
     CONFIG_EXTRA_LDLIBS="m c gcc"
